@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect, useCallback, useMemo} from 'react';
 import gotService from '../services/gotService';
 import ErrorMessage from '../errorMeessage/errorMessage';
 import Spinner from '../spinner/spinner';
@@ -24,7 +24,7 @@ const RandomBlockDescrSPAN = styled.span`
 `;
 
 const RandomChar = () => {
-    const getService = new gotService();
+    const getService = useMemo(() => new gotService(), []);
     
     const [char, setChar] = useState({});
     const [loaded, setLoaded] = useState(false);
