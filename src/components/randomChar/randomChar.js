@@ -51,7 +51,7 @@ const RandomChar = () => {
         updateChar();
         const timerId = setInterval(updateChar, 15000);
         return () => {clearInterval(timerId)}
-    }, [])
+    }, [updateChar])
 
     const { name, gender, born, died, culture } = char;
 
